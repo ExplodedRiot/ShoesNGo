@@ -7,8 +7,9 @@
         <img src="{{ url('images/logo.png') }}" class="rounded mx-auto-d-block" width="700" alt="">
     </div>
         @foreach($products as $product)
-        <div class="card" style="width: 18rem;">
-            <img src="..."  class="card-img-top" alt="..." >
+        <div class="col-md-4">
+        <div class="card">
+            <img src="{{ url('uploads') }}/{{ $product->image }}"  class="card-img-top" alt="..." >
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
