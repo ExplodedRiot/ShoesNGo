@@ -11,9 +11,15 @@
         <div class="card">
             <img src="{{ url('uploads') }}/{{ $product->image }}"  class="card-img-top" alt="..." >
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">{{ $product->product-name }}</h5>
+                <p class="card-text">
+                <strong>Price :</strong> {{ number_format($product->price)}}K IDR <br>
+                <strong>Stock :</strong> {{ $product->stock }} <br>
+                <br>
+                <strong>Brand :</strong> {{ $product->description }}
+                </p>
+                <a href="#" class="btn btn-primary">Order Now</a>
+                
             </div>
         </div>
         </div>
