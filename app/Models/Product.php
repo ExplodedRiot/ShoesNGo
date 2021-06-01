@@ -9,7 +9,7 @@ class Product extends Model
 {
     public function order_details()
     {
-        return $this->belongsTo('App\Models\OrderDetail', 'product_id', 'id';
+        return $this->belongsTo('App\Models\OrderDetail', 'product_id', 'id');
     }
 }
 }
