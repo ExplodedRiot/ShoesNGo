@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('product')->insert([
+        DB::table('products')->insert([
             [
                 'product_name'=>'Adidas Lite Racer 2.0',
                 "Price"=>'399.000',
