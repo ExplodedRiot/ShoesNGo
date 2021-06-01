@@ -12,4 +12,4 @@ class Product extends Model
         return $this->belongsTo('App\Models\OrderDetail', 'product_id', 'id');
     }
 }
-}
+
