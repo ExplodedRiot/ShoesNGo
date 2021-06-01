@@ -19,7 +19,6 @@
                 <strong>Brand :</strong> {{ $product->description }}
                 </p>
                 <a href="#" class="btn btn-primary">Order Now</a>
-                
             </div>
         </div>
         </div>
