@@ -17,32 +17,32 @@ class ProductSeeder extends Seeder
         //
         DB::table('products')->insert([
             [
-                'product_name'=>'Adidas Lite Racer 2.0',
-                "Price"=>'399.000',
+                'product_name'=>'Converse CTAS Cheerful Faded Spruce',
+                "Price"=>'459.000',
                 "Stock"=>"25",
-                "Description"=>"Adidas",
-                "Image"=>"images/Adidas_lite_racer_2.0_(IDR 399k).jpg"
+                "Description"=>"Converse",
+                "Image"=>"images/Converse_CTAS_cheerful_faded spruce_(IDR 459k).jpg"
             ],
             [
-                'product_name'=>'Adidas samba OG Classic',
-                "Price"=>'799.000',
+                'product_name'=>'Converse CTAS Happy Camper',
+                "Price"=>'449.000',
                 "Stock"=>"25",
-                "Description"=>"Adidas",
-                "Image"=>"images/Adidas_samba_OG_Classic_(IDR 799k).jpg"
+                "Description"=>"Converse",
+                "Image"=>"images/Converse_CTAS_Happy_Camper_(IDR 449k).jpg"
             ],
             [
-                'product_name'=>'Adidas Stan Smith Polka White Leather',
-                "Price"=>'399.000',
+                'product_name'=>'Converse El Distrito 2.0',
+                "Price"=>'359.000',
                 "Stock"=>"25",
-                "Description"=>"Adidas",
-                "Image"=>"images/Adidas_stan_smith_polka_white_leather_(IDR 399k).jpg"
+                "Description"=>"Converse",
+                "Image"=>"images/Converse_El_distrito_2.0_(IDR 359k).jpg"
             ],
             [
-                'product_name'=>'Adidas Terrex CMTK Outdoor',
-                "Price"=>'999.000',
+                'product_name'=>'CTAS Hi Camo Patch',
+                "Price"=>'449.000',
                 "Stock"=>"25",
-                "Description"=>"Adidas",
-                "Image"=>"images/Adidas_Terrex_CMTK_Outdoor_(IDR 999k).jpg"
+                "Description"=>"Converse",
+                "Image"=>"images/CTAS_Hi_Camo_Patch_(IDR 449k).jpg"
             ]
         ]);
     }
