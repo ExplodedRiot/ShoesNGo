@@ -54,7 +54,7 @@
                         <li class="nav-item">
                                 <?php
                                  $main_order = \App\Model\Order::where('user_id', Auth::user()->id)->where('status',0)->first();
-                                 if(!empty($pesanan_utama))
+                                 if(!empty($main_order))
                                     {
                                      $notif = \App\Model\OrderDetail::where('order_id', $main_order->id)->count(); 
                                     }
