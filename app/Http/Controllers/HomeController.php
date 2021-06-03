@@ -25,7 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::paginate(20);
-        dd($products);
         return view('home', compact('products'));
     }
 }
