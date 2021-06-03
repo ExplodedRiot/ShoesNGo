@@ -53,10 +53,10 @@
                         @else
                         <li class="nav-item">
                                 <?php
-                                 $main_order = App\Model\Order::where('user_id', Auth::user()->id)->where('status',0)->first();
+                                 $main_order = App\Models\Order::where('user_id', Auth::user()->id)->where('status',0)->first();
                                  if(!empty($main_order))
                                     {
-                                     $notif = App\Model\OrderDetail::where('order_id', $main_order->id)->count(); 
+                                     $notif = App\Models\OrderDetail::where('order_id', $main_order->id)->count();
                                     }
                                 ?>
                                 <a class="nav-link" href="{{ url('check-out') }}">
