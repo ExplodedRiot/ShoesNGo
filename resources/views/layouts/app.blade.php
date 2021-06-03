@@ -40,6 +40,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -52,10 +53,10 @@
                         @else
                         <li class="nav-item">
                                 <?php
-                                 $main_order = \App\Models\Order::where('user_id', Auth::user()->id)->where('status', 0)->first();
+                                 $main_order = App\Model\Order::where('user_id', Auth::user()->id)->where('status',0)->first();
                                  if(!empty($main_order))
                                     {
-                                     $notif = \App\Models\OrderDetail::where('order_id', $main_order->id)->count();
+                                     $notif = App\Model\OrderDetail::where('order_id', $main_order->id)->count(); 
                                     }
                                 ?>
                                 <a class="nav-link" href="{{ url('check-out') }}">
