@@ -17,4 +17,4 @@ class Order extends Model
         return $this->hasMany('App\Models\OrderDetail', 'order_id', 'id');
     }
 }
-}
+
