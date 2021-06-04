@@ -9,19 +9,19 @@
         @foreach($products as $product)
         <div class="col-md-4">
             <div class="card">
-              <img src="{{ url('uploads') }}/{{ $product->image }}" class="card-img-top" alt="...">
+              <img src="{{url('uploads/').$product->image}}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">{{ $product->product_name }}</h5>
                 <p class="card-text">
-                    <strong>Price :</strong> Rp. {{ number_format($product->price)}} <br>
-                    <strong>Stock :</strong> {{ $product->stpck }} <br>
+                    <strong>Price :</strong>{{ number_format($product->price)}}K IDR <br>
+                    <strong>Stock :</strong> {{ $product->stock }} <br>
                     <hr>
                     <strong>Brand :</strong> <br>
-                    {{ $product->description }} 
+                    {{ $product->description }}
                 </p>
                 <a href="{{ url('message') }}/{{ $product->id }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Message</a>
               </div>
-            </div> 
+            </div>
         </div>
         @endforeach
     </div>
