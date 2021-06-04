@@ -41,8 +41,8 @@
                                 </td>
                                 <td>{{ $order_detail->product->product_name }}</td>
                                 <td>{{ $order_detail->amount }} sneakers</td>
-                                <td align="right">Rp. {{ number_format($order_detail->product->price) }}</td>
-                                <td align="right">Rp. {{ number_format($order_detail->total_price) }}</td>
+                                <td align="right">{{ number_format($order_detail->product->price) }}K IDR</td>
+                                <td align="right">{{ number_format($order_detail->total_price) }}K IDR</td>
                                 <td>
                                     <form action="{{ url('check-out') }}/{{ $order_detail->id }}" method="post">
                                         @csrf
