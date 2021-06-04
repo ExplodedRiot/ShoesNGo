@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-body">
                     <h3><i class="fa fa-shopping-cart"></i> Check Out</h3>
-                    @if(!empty($pesanan))
+                    @if(!empty($order))
                     <p align="right">Date Order : {{ $order->date }}</p>
                     <table class="table table-striped">
                         <thead>
