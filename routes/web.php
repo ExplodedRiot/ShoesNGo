@@ -20,12 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('message/{id}',[App\Http\Controllers\MessageController::class, 'index']);
-Route::post('message/{id}', [App\Http\Controllers\MessageController::class, 'message']);
-Route::get('check-out', [App\Http\Controllers\MessageController::class, 'check-out']);
-Route::delete('check-out/{id}',[App\Http\Controllers\MessageController::class, 'delete']);
+Route::get('message/{id}',[App\Http\Controllers\MessageController::class, 'index'])->name('home');
+Route::post('message/{id}', [App\Http\Controllers\MessageController::class, 'message'])->name('message');
+Route::get('check-out', [App\Http\Controllers\MessageController::class, 'check-out'])->name('check-out');
+Route::delete('check-out/{id}',[App\Http\Controllers\MessageController::class, 'delete'])->name('delete');
 
 Route::get('check-out-confirmation', [App\Http\Controllers\MessageController::class, 'confirm']);
 
-Route::get('profile',[App\Http\Controllers\ProfileController::class, 'index']);
+Route::get('profile',[App\Http\Controllers\ProfileController::class, 'index'])->name('home');
 
