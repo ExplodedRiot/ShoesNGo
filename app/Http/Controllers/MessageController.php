@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Product;
-use App\Order;
-use App\User;
-use App\OrderDetail;
+use App\Models\Product;
+use App\Models\Order;
+use App\Models\User;
+use App\Models\OrderDetail;
 use Auth;
 use Alert;
 use Carbon\Carbon;
