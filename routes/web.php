@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('message/{id}',[App\Http\Controllers\MessageController::class, 'index'])->name('home');
 Route::post('message/{id}', [App\Http\Controllers\MessageController::class, 'message'])->name('message');
-Route::get('check-out/{id}', [App\Http\Controllers\MessageController::class, 'check-out'])->name('check-out');
+Route::get('check-out/{id}', [App\Http\Controllers\MessageController::class, 'check-out'])->name('home');
 Route::delete('check-out/{id}',[App\Http\Controllers\MessageController::class, 'delete'])->name('delete');
 
 Route::get('check-out-confirmation', [App\Http\Controllers\MessageController::class, 'confirm']);
