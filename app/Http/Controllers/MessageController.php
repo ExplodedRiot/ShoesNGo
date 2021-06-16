@@ -10,7 +10,7 @@ use Alert;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class PesanController extends Controller
+class MessageController extends Controller
 {
     public function __construct()
     {
