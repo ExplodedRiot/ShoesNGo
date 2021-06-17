@@ -6,7 +6,7 @@
         <div class="col-md-12 mb-5">
             <img src="{{ url('uploads/logo.png') }}" class="rounded mx-auto d-block" width="700" alt="">
         </div>
-        @foreach($product as $product)
+        @foreach($products as $product)
         <div class="col-md-4">
             <div class="card">
               <img src="{{ url('uploads') }}/{{ $product->image }}" class="card-img-top" alt="...">
