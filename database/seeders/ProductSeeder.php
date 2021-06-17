@@ -17,32 +17,32 @@ class ProductSeeder extends Seeder
         //
         DB::table('products')->insert([
             [
-                'product_name'=>'Converse CTAS Cheerful Faded Spruce',
-                "Price"=>'459.000',
+                'product_name'=>'Vans Era Gum Green',
+                "Price"=>'499000',
                 "Stock"=>"25",
-                "Description"=>"Converse",
-                "Image"=>"images/Converse_CTAS_cheerful_faded spruce_(IDR 459k).jpg"
+                "Description"=>"Vans",
+                "Image"=>"images/Vans era gum green (IDR 499k).jpg"
             ],
             [
-                'product_name'=>'Converse CTAS Happy Camper',
-                "Price"=>'449.000',
+                'product_name'=>'Vans Era Primary Check True Blue',
+                "Price"=>'649000',
                 "Stock"=>"25",
-                "Description"=>"Converse",
-                "Image"=>"images/Converse_CTAS_Happy_Camper_(IDR 449k).jpg"
+                "Description"=>"Vans",
+                "Image"=>"images/Vans era primary check true blue (IDR 649k).jpg"
             ],
             [
-                'product_name'=>'Converse El Distrito 2.0',
-                "Price"=>'359.000',
+                'product_name'=>'Vans Era Ultramarine True White',
+                "Price"=>'499000',
                 "Stock"=>"25",
-                "Description"=>"Converse",
-                "Image"=>"images/Converse_El_distrito_2.0_(IDR 359k).jpg"
+                "Description"=>"Vans",
+                "Image"=>"images/Vans era ultramarine true white (IDR 499k).jpg"
             ],
             [
-                'product_name'=>'CTAS Hi Camo Patch',
-                "Price"=>'449.000',
+                'product_name'=>'Vans Tc Suede True Navy',
+                "Price"=>'699000',
                 "Stock"=>"25",
-                "Description"=>"Converse",
-                "Image"=>"images/CTAS_Hi_Camo_Patch_(IDR 449k).jpg"
+                "Description"=>"Vans",
+                "Image"=>"images/Vans tc suede true navy (IDR 699k).jpg"
             ]
         ]);
     }
