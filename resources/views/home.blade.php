@@ -13,8 +13,8 @@
               <div class="card-body">
                 <h5 class="card-title">{{ $product->product_name }}</h5>
                 <p class="card-text">
-                    <strong>Price :</strong>{{ number_format($product->price)}}K IDR <br>
-                    <strong>Stock :</strong> {{ $product->stock }} <br>
+                    <strong>Price :</strong> IDR {{ number_format($product->Price)}}K <br>
+                    <strong>Stock :</strong> {{ $product->Stock }} <br>
                     <hr>
                     <strong>Brand :</strong> <br>
                     {{ $product->description }}
