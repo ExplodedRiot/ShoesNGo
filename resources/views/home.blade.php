@@ -4,12 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12 mb-5">
-        <img src="{{ url('uploads') }}/{{ $products->Image }}" class="card-img-top" width="700" alt="">
+            <img src="{{ url('uploads/logo.png') }}" class="rounded mx-auto d-block" width="700" alt="">
         </div>
         @foreach($products as $product)
         <div class="col-md-4">
             <div class="card">
-              <img src="{{ url('public/uploads') }}/{{ $product->Image }}" class="card-img-top" alt="">
+            <img src="{{ url('uploads') }}/{{ $product->Image }}" class="card-img-top" alt="">
               <div class="card-body">
                 <h5 class="card-title">{{ $product->product_name }}</h5>
                 <p class="card-text">
