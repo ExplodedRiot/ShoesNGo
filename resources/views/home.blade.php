@@ -19,7 +19,7 @@
                     <strong>Brand :</strong> <br>
                     {{ $product->description }}
                 </p>
-                <a href="{{ url('message') }}/{{ $product->id }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Message</a>
+                <a href="{{ url('message') }}/{{ $product->id }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
               </div>
             </div>
         </div>
