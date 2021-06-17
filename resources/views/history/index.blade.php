@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ url{'uploads'} }}/{{ $product->image }}" class="rounded mx-auto d-block"
+                    <img src="{{ url('images') }}/{{ $product->Image }}" class="rounded mx-auto d-block"
                     width="100%" alt="">
                 </div>
             <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back</a>
