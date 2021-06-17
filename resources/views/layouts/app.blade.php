@@ -56,13 +56,13 @@
                                  $main_order = App\Models\Order::where('user_id', Auth::user()->id)->first();
                                  if(!empty($main_order))
                                     {
-                                     $notif = App\Models\OrderDetail::where('order_id', $main_order->id)->count();
+                                     $notification = App\Models\OrderDetail::where('order_id', $main_order->id)->count();
                                     }
                                 ?>
                                 <a class="nav-link" href="{{ url('check-out') }}">
                                     <i class="fa fa-shopping-cart"></i>
-                                    @if(!empty($notif))
-                                    <span class="badge badge-danger">{{ $notif }}</span>
+                                    @if(!empty($notification))
+                                    <span class="badge badge-danger">{{ $notification }}</span>
                                     @endif
                                 </a>
                             </li>
