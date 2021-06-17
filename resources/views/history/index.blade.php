@@ -3,15 +3,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-        <div class="card-header">
-            <h4>{{ $product->product_name }}</h4>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="{{ url('images') }}/{{ $product->Image }}" class="rounded mx-auto d-block"
-                    width="100%" alt="">
-                </div>
             <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back</a>
         </div>
         <div class="col-md-12 mt-2">
