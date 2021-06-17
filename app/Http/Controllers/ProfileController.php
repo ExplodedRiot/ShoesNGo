@@ -29,8 +29,8 @@ class ProfileController extends Controller
     	$user = User::where('id', Auth::user()->id)->first();
     	$user->name = $request->name;
     	$user->email = $request->email;
+		$user->address = $request->address;
     	$user->phone_number = $request->phone_number;
-    	$user->address = $request->address;
     	if(!empty($request->password))
     	{
     		$user->password = Hash::make($request->password);
