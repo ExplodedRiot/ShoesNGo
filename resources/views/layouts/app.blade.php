@@ -53,16 +53,16 @@
                         @else
                         <li class="nav-item">
                                 <?php
-                                 $main_order = App\Models\Order::where('user_id', Auth::user()->id)->first();
+                                 $main_order = \App\Models\Order::where('user_id', Auth::user()->id)->where('status',0)->first();
                                  if(!empty($main_order))
                                     {
-                                     $notification = App\Models\OrderDetail::where('order_id', $main_order->id)->count();
+                                     $notif = \App\Models\OrderDetail::where('order_id', $main_order->id)->count();
                                     }
                                 ?>
                                 <a class="nav-link" href="{{ url('check-out') }}">
                                     <i class="fa fa-shopping-cart"></i>
-                                    @if(!empty($notification))
-                                    <span class="badge badge-danger">{{ $notification }}</span>
+                                    @if(!empty($notif))
+                                    <span class="badge badge-danger">{{ $notif }}</span>
                                     @endif
                                 </a>
                             </li>
@@ -103,5 +103,6 @@
     </div>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @include('sweet::alert')
 </body>
 </html>
