@@ -37,10 +37,10 @@
                                     @if($order->status == 1)
                                     Already Ordered & Unpaid
                                     @else
-                                    Already paid 
+                                    Already paid
                                     @endif
                                 </td>
-                                <td>{{ number_format($order->total_price+$order->code) }}K IDR</td>
+                                <td>{{ number_format($order->total_price+$order->code) }} IDR</td>
                                 <td>
                                     <a href="{{ url('history') }}/{{ $order->id }}" class="btn btn-primary"><i class="fa fa-info"></i> Detail</a>
                                 </td>
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
 @endsection
