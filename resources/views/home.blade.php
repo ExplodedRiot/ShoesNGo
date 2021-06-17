@@ -17,7 +17,7 @@
                     <strong>Stock :</strong> {{ $product->Stock }} <br>
                     <hr>
                     <strong>Brand :</strong> <br>
-                    {{ $product->description }}
+                    {{ $product->Description }}
                 </p>
                 <a href="{{ url('message') }}/{{ $product->id }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
               </div>
