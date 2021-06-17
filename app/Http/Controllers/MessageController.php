@@ -113,7 +113,7 @@ class MessageController extends Controller
         return redirect('check-out');
     }
 
-    public function konfirmasi()
+    public function confrimation()
     {
         $user = User::where('id', Auth::user()->id)->first();
 
