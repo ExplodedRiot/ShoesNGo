@@ -23,7 +23,7 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
          $this->validate($request, [
-            'password'  => 'confirmed',
+            'password'  => 'min:16', 'confirmed',
         ]);
 
         $user = User::where('id', Auth::user()->id)->first();
