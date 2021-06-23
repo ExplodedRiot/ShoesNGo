@@ -31,5 +31,5 @@ Route::get('profile',[App\Http\Controllers\ProfileController::class, 'index'])->
 Route::get('profile',[App\Http\Controllers\ProfileController::class, 'profile'])->name('update');
 
 Route::get('history',[App\Http\Controllers\HistoryController::class, 'index'])->name('home');
-Route::get('history/{id}',[App\Http\Controllers\HistoryController::class, 'detail'])->name('detail');
+Route::get('history',[App\Http\Controllers\HistoryController::class, 'detail'])->name('detail');
 
