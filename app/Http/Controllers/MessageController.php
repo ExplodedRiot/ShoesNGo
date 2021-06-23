@@ -25,7 +25,7 @@ class MessageController extends Controller
     }
 
     public function message(Request $request, $id)
-    {	
+    {
     	$product = product::where('id', $id)->first();
     	$date = Carbon::now();
 
@@ -48,7 +48,7 @@ class MessageController extends Controller
             $order->code = mt_rand(100, 999);
 	    	$order->save();
     	}
-    	
+
 
     	//simpan ke database order detail
     	$new_order = order::where('user_id', Auth::user()->id)->where('status',0)->first();
@@ -63,7 +63,7 @@ class MessageController extends Controller
 	    	$order_detail->amount = $request->amount_message;
 	    	$order_detail->total_price = $product->price*$request->amount_message;
 	    	$order_detail->save();
-    	}else 
+    	}else
     	{
     		$order_detail = orderdetail::where('product_id', $product->id)->where('order_id', $new_order->id)->first();
 
@@ -79,7 +79,7 @@ class MessageController extends Controller
     	$order = order::where('user_id', Auth::user()->id)->where('status',0)->first();
     	$order->total_price = $order->total_price+$product->price*$request->amount_message;
     	$order->update();
-    	
+
         Alert::success('Order Succesfully Added in Cart', 'Success');
     	return redirect('check-out');
 
@@ -94,7 +94,7 @@ class MessageController extends Controller
             $order_details = orderdetail::where('order_id', $order->id)->get();
 
         }
-        
+
         return view('message.check_out', compact('order', 'order_details'));
     }
 
@@ -148,5 +148,5 @@ class MessageController extends Controller
 
     }
 
-    
+
 }
