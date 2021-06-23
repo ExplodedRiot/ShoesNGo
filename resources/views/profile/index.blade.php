@@ -3,7 +3,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2>{{ $product->product_name}}</h2>
             <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back</a>
         </div>
         <div class="col-md-12 mt-2">
