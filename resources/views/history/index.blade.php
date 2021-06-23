@@ -9,138 +9,48 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                    <li class="breadcrumb-item active" aria-current="page">Order History</li>
                 </ol>
             </nav>
         </div>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4><i class="fa fa-user"></i> My Profile</h4>
-                    <table class="table">
+                    <h3><i class="fa fa-history"></i> Order History</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Total Price</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
                         <tbody>
+                            <?php $no = 1; ?>
+                            @foreach($orders as $order)
                             <tr>
-                                <td>Name</td>
-                                <td width="10">:</td>
-                                <td>{{ $user->name }}</td>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $order->date }}</td>
+                                <td>
+                                    @if($order->status == 1)
+                                    Order Done, need to be payed
+                                    @else
+                                    Order Complete
+                                    @endif
+                                </td>
+                                <td>Rp. {{ number_format($order->total_price+$order->code) }}</td>
+                                <td>
+                                    <a href="{{ url('history') }}/{{ $order->id }}" class="btn btn-primary"><i class="fa fa-info"></i> Detail</a>
+                                </td>
                             </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>:</td>
-                                <td>{{ $user->email }}</td>
-                            </tr>
-                            <tr>
-                                <td>Phone Number</td>
-                                <td>:</td>
-                                <td>{{ $user->phone_number }}</td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td>:</td>
-                                <td>{{ $user->address }}</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <h4><i class="fa fa-pencil-alt"></i> Edit Profile</h4>
-                    <form method="POST" action="{{ url('profile') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-2 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-2 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="phone_number" class="col-md-2 col-form-label text-md-right">Phone Number</label>
-
-                            <div class="col-md-6">
-                                <input id="phone_number" type="text" class="form-control @error('nohp') is-invalid @enderror" name="phone_number" value="{{ $user->phone_number }}" required autocomplete="phone_number" autofocus>
-
-                                @error('phone_number')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="address" class="col-md-2 col-form-label text-md-right">Address</label>
-
-                            <div class="col-md-6">
-                                <textarea name="address" class="form-control @error('address') is-invalid @enderror" required="">{{ $user->address }}</textarea>
-
-                                @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-2 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-2 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-2">
-                                <button type="submit" class="btn btn-primary">
-                                    Save
-                                </button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
-
