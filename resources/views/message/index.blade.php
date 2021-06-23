@@ -28,17 +28,17 @@
                                     <tr>
                                         <td>Price</td>
                                         <td>:</td>
-                                        <td>IDR {{ number_format($product->price) }}</td>
+                                        <td>IDR {{ number_format($product->Price)}}</td>
                                     </tr>
                                     <tr>
                                         <td>Stock</td>
                                         <td>:</td>
-                                        <td>{{ number_format($product->stock) }}</td>
+                                        <td>{{ $product->Stock }}</td>
                                     </tr>
                                     <tr>
                                         <td>Description</td>
                                         <td>:</td>
-                                        <td>{{ $product->description }}</td>
+                                        <td>{{ $product->Description }}</td>
                                     </tr>
                                     <tr>
                                         <td>Order Quantity</td>
