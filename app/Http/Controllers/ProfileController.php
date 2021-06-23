@@ -36,7 +36,7 @@ class ProfileController extends Controller
             $user->password = Hash::make($request->password);
         }
 
-        $user->update();
+        $user->update($request->all());
 
         Alert::success('User updated Successful ', 'Success');
         return redirect('profile');
