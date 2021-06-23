@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="{{ url('uploads') }}/{{ $product->image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
+                            <img src="{{ url('images') }}/{{ $product->Image }}" class="rounded mx-auto d-block" width="400" alt="...">
                         </div>
                         <div class="col-md-6 mt-5">
                             <h2>{{ $product->product_name }}</h2>
@@ -28,7 +28,7 @@
                                     <tr>
                                         <td>Price</td>
                                         <td>:</td>
-                                        <td>{{ number_format($product->price) }}K IDR</td>
+                                        <td>IDR {{ number_format($product->price) }}</td>
                                     </tr>
                                     <tr>
                                         <td>Stock</td>
@@ -36,7 +36,7 @@
                                         <td>{{ number_format($product->stock) }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Decscription</td>
+                                        <td>Description</td>
                                         <td>:</td>
                                         <td>{{ $product->description }}</td>
                                     </tr>
@@ -47,7 +47,7 @@
                                              <form method="post" action="{{ url('message') }}/{{ $product->id }}" >
                                             @csrf
                                                 <input type="text" name="order_quantity" class="form-control" required="">
-                                                <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                                                <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Check Out</button>
                                             </form>
                                         </td>
                                     </tr>
