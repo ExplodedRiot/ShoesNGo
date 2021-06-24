@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('message/{id}',[App\Http\Controllers\MessageController::class, 'index'])->name('home');
-Route::post('message', [App\Http\Controllers\MessageController::class, 'index'])->name('message');
+Route::post('message/{id}', [App\Http\Controllers\MessageController::class, 'message'])->name('message');
 Route::get('check-out', [App\Http\Controllers\MessageController::class, 'index'])->name('check-out');
 Route::delete('check-out',[App\Http\Controllers\MessageController::class, 'index'])->name('delete');
 
