@@ -41,7 +41,7 @@
                                         <td>{{ $product->Description }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Order Quantity</td>
+                                        <td>Amount</td>
                                         <td>:</td>
                                         <td>
                                              <form method="post" action="{{ url('message') }}/{{ $product->id }}" >
