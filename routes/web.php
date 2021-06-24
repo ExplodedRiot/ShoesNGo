@@ -28,7 +28,7 @@ Route::delete('check-out',[App\Http\Controllers\MessageController::class, 'index
 Route::get('check-out-confirmation', [App\Http\Controllers\MessageController::class, 'confirm']);
 
 Route::get('profile',[App\Http\Controllers\ProfileController::class, 'index'])->name('home');
-Route::get('profile',[App\Http\Controllers\ProfileController::class, 'index'])->name('update');
+Route::post('profile',[App\Http\Controllers\ProfileController::class, 'update'])->name('home');
 
 Route::get('history',[App\Http\Controllers\HistoryController::class, 'index'])->name('home');
 Route::get('history',[App\Http\Controllers\HistoryController::class, 'index'])->name('detail');
