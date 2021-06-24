@@ -25,7 +25,7 @@ Route::post('message/{id}', 'App\Http\Controllers\MessageController@message');
 Route::get('check-out', 'App\Http\Controllers\MessageController@check_out');
 Route::delete('check-out/{id}','App\Http\Controllers\MessageController@delete');
 
-Route::get('check-out-confirmation', 'App\Http\Controllers\MessageController@confirm');
+Route::get('check-out-confirmation', 'App\Http\Controllers\MessageController@confirmation');
 
 Route::get('profile','App\Http\Controllers\ProfileController@index');
 Route::post('profile','App\Http\Controllers\ProfileController@update');
