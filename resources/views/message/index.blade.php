@@ -46,7 +46,7 @@
                                         <td>
                                              <form method="post" action="{{ url('message') }}/{{ $product->id }}" >
                                             @csrf
-                                                <input type="text" name="order_quantity" class="form-control" required="">
+                                                <input type="text" name="amount" class="form-control" required="">
                                                 <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Check Out</button>
                                             </form>
                                         </td>

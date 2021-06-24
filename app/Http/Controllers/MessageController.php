@@ -139,10 +139,11 @@ class MessageController extends Controller
             $product->update();
         }
 
-
         Alert::success('Order Success Check Out Please Continue Payment Process', 'Success');
         return redirect('history/'.$order_id);
 
     }
 
 }
+
+
