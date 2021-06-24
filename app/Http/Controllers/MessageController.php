@@ -115,7 +115,7 @@ class MessageController extends Controller
     {
         $user = User::where('id', Auth::user()->id)->first();
 
-        if(empty($user->alamat))
+        if(empty($user->address))
         {
             Alert::error('Please Fill the Identity', 'Error');
             return redirect('profile');
