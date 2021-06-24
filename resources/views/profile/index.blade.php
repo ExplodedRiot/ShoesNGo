@@ -19,7 +19,7 @@
                     <h4><i class="fa fa-user"></i> My Profile</h4>
                     <table class="table">
                         <tbody>
-                        <img src="/images/avatar/default.jpg{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+                        <img src="/images/avatar/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
                         <form enctype="multipart/form-data" action="/profile" method="POST">
                         <h2>{{ $user->name }}'s Profile</h2>
                         <input type="file" name="avatar">
