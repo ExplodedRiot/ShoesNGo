@@ -44,7 +44,7 @@ class MessageController extends Controller
             $order->user_id = Auth::user()->id;
             $order->date = $date;
             $order->status = 0;
-            $order->total_price = 0;
+            $order->amount = 0;
             $order->code = mt_rand(100, 999);
             $order->save();
         }
@@ -59,24 +59,24 @@ class MessageController extends Controller
             $order_detail = new orderdetail;
             $order_detail->product_id = $product->id;
             $order_detail->order_id = $new_order->id;
-            $order_detail->amount = $request->amount_message;
-            $order_detail->total_price = $product->price*$request->amount_message;
+            $order_detail->amount = $request->amount;
+            $order_detail->total_price = $product->price*$request->amount;
             $order_detail->save();
         }else
         {
             $order_detail = orderdetail::where('product_id', $product->id)->where('order_id', $new_order->id)->first();
 
-            $order_detail->amount = $order_detail->amount+$request->amount_message;
+            $order_detail->amount = $order_detail->amount+$request->amount;
 
             //price sekarang
-            $new_detail_order_price = $product->price*$request->amount_message;
+            $new_detail_order_price = $product->price*$request->amount;
             $order_detail->total_price = $order_detail->total_price+$new_detail_order_price;
             $order_detail->update();
         }
 
         //amount total
         $order = order::where('user_id', Auth::user()->id)->where('status',0)->first();
-        $order->total_price = $order->total_price+$product->price*$request->amount_message;
+        $order->total_price = $order->total_price+$product->price*$request->amount;
         $order->update();
 
         Alert::success('Order Succesfully Added in Cart', 'Success');
