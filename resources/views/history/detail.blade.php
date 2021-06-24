@@ -64,6 +64,11 @@
                                 <td colspan="5" align="right"><strong>amount to be transferred :</strong></td>
                                 <td align="right"><strong>Rp. {{ number_format($order->code+$order->total_price) }}</strong></td>
                             </tr>
+                            <tr>
+                            <td>
+                            <button onclick="window.print()" class="btn btn-primary">Print</button>
+                            </td>
+                            </tr>
                         </tbody>
                     </table>
                     @endif
@@ -71,7 +76,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 @endsection
