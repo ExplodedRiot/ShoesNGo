@@ -44,7 +44,7 @@ class MessageController extends Controller
             $order->user_id = Auth::user()->id;
             $order->date = $date;
             $order->status = 0;
-            $order->amount = 0;
+            $order->total_price = 0;
             $order->code = mt_rand(100, 999);
             $order->save();
         }
@@ -66,10 +66,10 @@ class MessageController extends Controller
         {
             $order_detail = orderdetail::where('product_id', $product->id)->where('order_id', $new_order->id)->first();
 
-            $order_detail->amount = $order_detail->amount+$request->amount;
+            $order_detail->amount = $order_detail->amount+$request->amount_message;
 
             //price sekarang
-            $new_detail_order_price = $product->price*$request->amount;
+            $new_detail_order_price = $product->price*$request->amount_message;
             $order_detail->total_price = $order_detail->total_price+$new_detail_order_price;
             $order_detail->update();
         }
@@ -111,7 +111,7 @@ class MessageController extends Controller
         return redirect('check-out');
     }
 
-    public function confrimation()
+    public function confirmation()
     {
         $user = User::where('id', Auth::user()->id)->first();
 
@@ -121,7 +121,7 @@ class MessageController extends Controller
             return redirect('profile');
         }
 
-        if(empty($user->nohp))
+        if(empty($user->phone_number))
         {
             Alert::error('Please Fill the Identity', 'Error');
             return redirect('profile');

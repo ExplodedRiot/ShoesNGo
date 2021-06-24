@@ -58,5 +58,6 @@ class ProfileController extends Controller
         Alert::success('User updated Successful ', 'Success');
         return view('profile', array('user' => Auth::user() ));
     }
+
 }
 

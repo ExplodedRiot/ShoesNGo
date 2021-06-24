@@ -19,8 +19,14 @@
                     <h4><i class="fa fa-user"></i> My Profile</h4>
                     <table class="table">
                         <tbody>
+                        <br>
                         <img src="/images/avatar/default.jpg{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
                         <h2>{{ $user->name }}'s Profile</h2>
+                        <form action="" method="POST" enctype="multipart/form-data" >
+                        @csrf
+                        <input type="file" name="file"> <br> <br>
+                        <button type="Submit" class="btn btn-primary">Change Avatar</button>
+                        <br>
                             <tr>
                                 <td>Name</td>
                                 <td width="10">:</td>
@@ -52,17 +58,6 @@
                     <h4><i class="fa fa-pencil-alt"></i> Edit Profile Details</h4>
                     <form method="POST" action="{{ url('profile') }}">
                         @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-2 col-form-label text-md-right">{{ __('Avatar') }}</label>
-
-                            <div class="col-md-6">
-                                <form enctype="multipart/form-data" action="/profile" method="POST">
-                                <input type="file" name="avatar">
-                                <input type="hidden" name="_token" value="{{csrf_token() }}">
-
-                            </div>
-                        </div>
 
                         <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label text-md-right">{{ __('Name') }}</label>

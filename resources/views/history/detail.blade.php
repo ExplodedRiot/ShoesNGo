@@ -47,7 +47,7 @@
                                 </td>
                                 <td>{{ $order_detail->product->product_name }}</td>
                                 <td>{{ $order_detail->amount }} sneakers</td>
-                                <td align="right">{{ number_format($order_detail->product->price) }}K IDR</td>
+                                <td align="right">{{ number_format($order_detail->product->Price) }}K IDR</td>
                                 <td align="right">{{ number_format($order_detail->total_price) }}K IDR</td>
                             </tr>
                             @endforeach

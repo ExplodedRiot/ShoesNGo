@@ -30,4 +30,10 @@ class HistoryController extends Controller
 
      	return view('history.detail', compact('order','order_details'));
     }
+
+    public function prnpreview()
+    {
+        $order_details = order_detail::all();
+        return view('order_details')->with('order_details', $order_details);
+    }
 }
