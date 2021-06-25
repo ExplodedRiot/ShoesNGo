@@ -16,10 +16,6 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-body">
-                    <h3>Success!</h3>
-                    <h5>Your order has been successfully checked out, then for payment, please transfer it to your account <strong>Bank BCA Account Number : 32113-821312-123</strong> with a nominal : <strong>{{ number_format($order->code+$order->total_price) }} IDR</strong></h5>
-                </div>
             </div>
             <div class="card mt-2">
                 <div class="card-body">
@@ -40,6 +36,10 @@
                         <tbody>
                             <?php $no = 1; ?>
                             @foreach($order_details as $order_detail)
+                            <div class="card-body">
+                                <h3>Success!</h3>
+                                <h5>Your order has been successfully checked out, then for payment, please transfer it to your account <strong>Bank BCA Account Number : 32113-821312-123</strong> with a nominal : <strong>{{ number_format($order->code+$order_detail->amount * $order_detail->product->Price) }} IDR</strong></h5>
+                            </div>
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>
