@@ -42,7 +42,7 @@
                                 <td>{{ $order_detail->product->product_name }}</td>
                                 <td>{{ $order_detail->amount }} sneakers</td>
                                 <td align="right">{{ number_format($order_detail->product->Price) }} IDR</td>
-                                <td align="right">{{ number_format($order_detail->total_price) }} IDR</td>
+                                <td align="right">{{ number_format($order_detail->amount * $order_detail->product->Price) }} IDR</td>
                                 <td>
                                     <form action="{{ url('check-out') }}/{{ $order_detail->id }}" method="post">
                                         @csrf
@@ -54,7 +54,7 @@
                             @endforeach
                             <tr>
                                 <td colspan="5" align="right"><strong>Total Price :</strong></td>
-                                <td align="right"><strong>{{ number_format($order->total_price) }}K IDR</strong></td>
+                                <td align="right"><strong>{{ number_format($order_detail->amount * $order_detail->product->Price) }} IDR</strong></td>
                                 <td>
                                     <a href="{{ url('check-out-confirmation') }}" class="btn btn-success" onclick="return confirm('Are you sure you want to check out?');">
                                         <i class="fa fa-shopping-cart"></i> Check Out

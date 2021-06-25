@@ -48,21 +48,21 @@
                                 <td>{{ $order_detail->product->product_name }}</td>
                                 <td>{{ $order_detail->amount }} sneakers</td>
                                 <td align="right">{{ number_format($order_detail->product->Price) }} IDR</td>
-                                <td align="right">{{ number_format($order_detail->total_price) }} IDR</td>
+                                <td align="right">{{ number_format($order_detail->amount * $order_detail->product->Price) }} IDR</td>
                             </tr>
                             @endforeach
 
                             <tr>
                                 <td colspan="5" align="right"><strong>Total price :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($order->total_price) }}</strong></td>
+                                <td align="right"><strong>{{ number_format($order_detail->amount * $order_detail->product->Price) }} IDR</strong></td>
                             </tr>
                             <tr>
                                 <td colspan="5" align="right"><strong>Unique Code :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($order->code) }}</strong></td>
+                                <td align="right"><strong>{{ number_format($order->code) }} IDR</strong></td>
                             </tr>
                              <tr>
                                 <td colspan="5" align="right"><strong>amount to be transferred :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($order->code+$order->total_price) }}</strong></td>
+                                <td align="right"><strong>{{ number_format($order->code+$order_detail->amount * $order_detail->product->Price) }} IDR</strong></td>
                             </tr>
                             <tr>
                             <td>
