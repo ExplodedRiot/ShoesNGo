@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <h3>Success!</h3>
-                    <h5>Your order has been successfully checked out, then for payment, please transfer it to your account <strong>Bank BCA Account Number : 32113-821312-123</strong> with a nominal : <strong>IDR {{ number_format($order->code+$order->total_price) }}</strong></h5>
+                    <h5>Your order has been successfully checked out, then for payment, please transfer it to your account <strong>Bank BCA Account Number : 32113-821312-123</strong> with a nominal : <strong>{{ number_format($order->code+$order->total_price) }} IDR</strong></h5>
                 </div>
             </div>
             <div class="card mt-2">

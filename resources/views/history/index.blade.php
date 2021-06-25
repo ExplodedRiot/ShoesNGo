@@ -40,7 +40,7 @@
                                     Order Complete
                                     @endif
                                 </td>
-                                <td>Rp. {{ number_format($order->total_price+$order->code) }}</td>
+                                <td>{{ number_format($order->total_price+$order->code) }} IDR</td>
                                 <td>
                                     <a href="{{ url('history') }}/{{ $order->id }}" class="btn btn-primary"><i class="fa fa-info"></i> Detail</a>
                                 </td>
