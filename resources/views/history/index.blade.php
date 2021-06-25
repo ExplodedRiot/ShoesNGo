@@ -26,7 +26,7 @@
                                 <th>No</th>
                                 <th>Date</th>
                                 <th>Status</th>
-                                <th>Order Code</th>
+                                <th>Unique Code</th>
                                 <th>action</th>
                             </tr>
                         </thead>
