@@ -54,7 +54,7 @@
                             @endforeach
                             <tr>
                                 <td colspan="5" align="right"><strong>Total Price :</strong></td>
-                                <td align="right"><strong>{{ number_format($order_detail->amount * $order_detail->product->Price) }} IDR</strong></td>
+                                <td align="right"><strong>{{ number_format($order_detail->amount * $order_detail->product->Price) }}K IDR</strong></td>
                                 <td>
                                     <a href="{{ url('check-out-confirmation') }}" class="btn btn-success" onclick="return confirm('Are you sure you want to check out?');">
                                         <i class="fa fa-shopping-cart"></i> Check Out
