@@ -39,6 +39,7 @@
                             <div class="card-body">
                                 <h3>Success!</h3>
                                 <h5>Your order has been successfully checked out, then for payment, please transfer it to your account <strong>Bank BCA Account Number : 32113-821312-123</strong> with a nominal : <strong>{{ number_format($order->code+$order_detail->amount * $order_detail->product->Price) }} IDR</strong></h5>
+                                <button onclick="window.print()" class="btn btn-primary">Print</button>
                             </div>
                             <tr>
                                 <td>{{ $no++ }}</td>
@@ -63,11 +64,6 @@
                              <tr>
                                 <td colspan="5" align="right"><strong>amount to be transferred :</strong></td>
                                 <td align="right"><strong>{{ number_format($order->code+$order_detail->amount * $order_detail->product->Price) }} IDR</strong></td>
-                            </tr>
-                            <tr>
-                            <td>
-                            <button onclick="window.print()" class="btn btn-primary">Print</button>
-                            </td>
                             </tr>
                         </tbody>
                     </table>
